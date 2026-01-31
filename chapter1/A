@@ -1,1 +1,41 @@
+/*
+9 Унагаев Егор Б763-2а
+Вариант A 
+3. Вывести заданное количество случайных чисел с переходом и без перехода
+на новую строку.
+*/
 
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
+
+        System.out.print("Введите количество чисел: ");
+        int n = scanner.nextInt();
+        if (n <= 0) {
+            System.out.println("Количество чисел должно быть положительным.");
+            return;
+        }
+
+        System.out.print("Вывод с переносами строк или нет? (y/n): ");
+        String mode = scanner.next();
+        if (mode.equalsIgnoreCase("y") || mode.equalsIgnoreCase("yes")) {
+            for (int i = 0; i < n; i++) {
+                int value = rand.nextInt(100);
+                System.out.println(value);
+            }
+        }
+        else {
+            for (int i = 0; i < n; i++) {
+                int value = rand.nextInt(100);
+                if (i > 0) System.out.print(" ");
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+        scanner.close();
+    }
+}
