@@ -13,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
 
-        System.out.print("Введите количество чисел: ");
+        System.out.print("Введите количество чисел: "); //на случай если пользователь захочет ввести отрицательное количество
         int n = scanner.nextInt();
         if (n <= 0) {
             System.out.println("Количество чисел должно быть положительным.");
