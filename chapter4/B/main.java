@@ -12,10 +12,10 @@
 Посчитать общую вместимость и грузоподъемность. Провести сортировку
 самолетов компании по дальности полета. Найти самолет в компании, соответствующий заданному диапазону параметров потребления горючего.
 */
-package by.epam.airline.main;
+package main;
 
-import by.epam.airline.entity.*;
-import by.epam.airline.logic.AirlineService;
+import entity.*;
+import logic.AirlineService;
 import java.util.Scanner;
 
 public class AirlineMain {
