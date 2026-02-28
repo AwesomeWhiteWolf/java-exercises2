@@ -1,4 +1,7 @@
 package by.epam.airline.entity;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
 public class PassengerPlane extends Plane {
     private int comfortLevel; // Дополнительный атрибут
 
