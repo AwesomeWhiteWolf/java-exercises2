@@ -1,4 +1,4 @@
-package by.epam.airline.entity;
+package entity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
