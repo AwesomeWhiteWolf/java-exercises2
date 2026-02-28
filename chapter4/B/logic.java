@@ -1,4 +1,4 @@
-package by.epam.airline.logic;
+package logic;
 
 import by.epam.airline.entity.Airline;
 import by.epam.airline.entity.Plane;
