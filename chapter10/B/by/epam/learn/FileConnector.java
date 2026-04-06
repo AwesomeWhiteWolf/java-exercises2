@@ -1,9 +1,6 @@
 package by.epam.learn.FileConnector;
-
 import java.io.*;
 import java.util.*;
-
-import java.io.*;
 
 class FileConnector {
     public static void saveAirline(Airline airline, String filename) throws IOException {
