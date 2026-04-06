@@ -1,4 +1,4 @@
-package by.epam.learn.Airline.java;
+package by.epam.learn.Airline;
 import java.io.*;
 import java.util.*;
 
