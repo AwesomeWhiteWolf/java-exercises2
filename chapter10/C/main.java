@@ -17,17 +17,16 @@ public class CommentRemover {
         try {
             String content = Files.readString(Path.of(inputPath));
 
-            // 2. Регулярное выражение для поиска всех видов комментариев
+            // Регулярные выражение для поиска всех видов комментариев
             // (//.*) - однострочные
-            // (/\*[\s\S]*?\*/) - многострочные (включая Javadoc)
+            // (/\*[\s\S]*?\*/) - многострочные
             String regex = "(//.*)|(/\\*[\\s\\S]*?\\*/)";
 
-            // 3. Удаляем комментарии
+            // Удаляем комментарии
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(content);
             String result = matcher.replaceAll("");
 
-            // 4. Записываем очищенный текст в новый файл
             Files.writeString(Path.of(outputPath), result);
 
             System.out.println("Комментарии успешно удалены. Результат в файле: " + outputPath);
