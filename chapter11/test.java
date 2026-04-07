@@ -1,5 +1,4 @@
 Вопрос 11.1.  
-
 public record Order(long orderId, double amount) {
 }
 и фрагмент кода:
@@ -13,11 +12,9 @@ b) 50.0 70.0 50.0
 c) 1, 50.0 5, 70.0 7, 50.0
 d) 5, 70.0 7, 50.0
 e) ничего не будет выведено
-
 Ответ: a) 70.0 50.0
 
 Вопрос 11.2.  
-
 class Order {
 long orderId;
 double amount;
@@ -39,11 +36,9 @@ a) 4, 0.0
 b) 4, 190.0
 c) 17, 0.0
 d) 17, 190.0
-
 Ответ: b) 4, 190.0
 
 Вопрос 11.3.  
-
 class Order {
 long orderId;
 double amount;
@@ -65,11 +60,9 @@ a) ничего не будет выведено
 b) 5, 70.0
 c) 1, 50.0
 d) 7, 70.0
-
 Ответ: b) 5, 70.0
 
 Вопрос 11.4.  
-
 public record Item(String name, double price) {
 }
 и фрагмент кода:
@@ -85,11 +78,9 @@ a) compilation fails
 b) 0.0
 c) 15.0
 d) 20.0
-
 Ответ: c) 15.0
 
 Вопрос 11.5.  
-
 Map<String, Integer> map = new HashMap<>();
 map.compute("y", (k, v) -> v==null ? 1 : 0);
 map.compute("z", (k, v) -> v==null ? 2 : 0);
@@ -102,13 +93,18 @@ b) [1, 3]
 c) [2, 4]
 d) [2, 4]
 e) runtime error
-
 Ответ: b) [1, 3]
 
-Вопрос 11.6.  
-
+Вопрос 11.6.
+Дан фрагмент кода:
 List<Integer> integers = List.of(1, 2, 3, 1, 7);
 boolean res = integers.stream()
 .// line 1
 System.out.print(res);
-Какой фрагмент кода следует вставить вместо комментария line 1,
+Какой фрагмент кода следует вставить вместо комментария line 1, чтобы
+в консоль было выведено значение true? (выбрать один)
+a) noneMatch(i ­> i == 2);
+b) allMatch(i ­> i == 2);
+c) anyMatch(i ­> i == 2);
+d) findFirst().
+Ответ: a) noneMatch(i -> i == 2);
