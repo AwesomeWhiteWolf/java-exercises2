@@ -2,7 +2,7 @@
 Унагаев Егор Б763-2а 9 вариант
 9. Из текста Java-программы удалить все виды комментариев.
 */
-
+package by.epam.learn.main;
 import java.io.*;
 import java.nio.file.*;
 import java.util.regex.Matcher;
