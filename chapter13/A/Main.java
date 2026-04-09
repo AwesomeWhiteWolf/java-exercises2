@@ -28,7 +28,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// --- 1. Класс организации соединения ---
+// Класс организации соединения
 class DatabaseConnector {
     private static final String URL = "jdbc:mysql://localhost:3306/watch_shop";
     private static final String USER = "root";
@@ -39,10 +39,8 @@ class DatabaseConnector {
     }
 }
 
-// --- 2. Класс для извлечения информации (Query) ---
+// Класс для извлечения информации
 class WatchQueryManager {
-    
-    // Вывести марки заданного типа часов
     public List<String> getBrandsByType(String type) throws SQLException {
         String sql = "SELECT brand FROM watches WHERE type = ?";
         List<String> brands = new ArrayList<>();
@@ -58,7 +56,6 @@ class WatchQueryManager {
         return brands;
     }
 
-    // Вывести информацию о механических часах, стоимость которых не превышает заданную
     public void printMechanicalWatchesUnderPrice(double maxPrice) throws SQLException {
         String sql = "SELECT * FROM watches WHERE type = 'механические' AND price <= ?";
         
@@ -74,7 +71,6 @@ class WatchQueryManager {
         }
     }
 
-    // Вывести марки часов, изготовленных в заданной стране
     public List<String> getBrandsByCountry(String country) throws SQLException {
         String sql = "SELECT w.brand FROM watches w " +
                      "JOIN manufacturers m ON w.manufacturer_id = m.id " +
@@ -92,7 +88,6 @@ class WatchQueryManager {
         return brands;
     }
 
-    // Вывести производителей, общая сумма часов которых в магазине не превышает заданную
     public void printManufacturersWithTotalValueUnder(double maxTotalSum) throws SQLException {
         String sql = "SELECT m.name, SUM(w.price * w.quantity) as total_sum " +
                      "FROM manufacturers m " +
@@ -112,9 +107,8 @@ class WatchQueryManager {
     }
 }
 
-// --- 3. Класс на модификацию информации ---
+// Класс на модификацию информации
 class WatchUpdateManager {
-
     public void addManufacturer(String name, String country) throws SQLException {
         String sql = "INSERT INTO manufacturers (name, country) VALUES (?, ?)";
         try (Connection conn = DatabaseConnector.getConnection();
@@ -158,7 +152,6 @@ class WatchUpdateManager {
     }
 }
 
-// --- Пример использования ---
 public class Main {
     public static void main(String[] args) {
         WatchQueryManager queryManager = new WatchQueryManager();
